@@ -166,7 +166,6 @@ class Table {
         if (!Array.isArray(data))
             throw new Error("the origin is not a array!");
         data.push(...values);
-        console.log(key);
         this.set(key, data);
         return this.get(tmp);
     }

@@ -186,7 +186,6 @@ export class Table<T extends Database.Database = Database.Database> {
 
         data.push(...values);
 
-        console.log(key)
         this.set(key, data);
         return this.get(tmp);
     }

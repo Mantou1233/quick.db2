@@ -1,55 +1,30 @@
-let inst = require("../dist/index").init();
-let db = inst();
+let ins = require("../dist/index").init();
+let db = ins();
 
 // Methods (everything should be true)
-console.log("Adding Numbers:", db.add("myNumber", 100) === 100);
-console.log(
-    "Setting Data:",
-    db.set("myData", "This data is here") === "This data is here"
-);
+
+console.log("Setting Data:", db.set("myNumber", 100) === 100);
+console.log("Fetching Data:", db.get("myNumber") === 100);
+
+
+console.log("Adding Numbers:", db.add("myNumber", 100) === 200);
+console.log("Subtracting Numbers:", db.subtract("myNumber", 50) === 150);
+
+db.set("myData", "_");
 console.log("Deleting Data:", db.delete("myData"));
 console.log("Fetching Deleted Data:", db.get("myData") === null);
+
 console.log("Fetching Added Number:", typeof db.get("myNumber") === "number");
 console.log("Pushing to an array:", db.push("myVal", "val") instanceof Array);
 console.log("Fetching first prop of array:", db.get("myVal.0") === "val");
-console.log(
-    "Setting prop in object:",
-    db.set("myObj.prop", "myProp").prop === "myProp"
-);
+
+console.log("Setting prop in object:", db.set("myObj.prop", "myProp").prop === "myProp");
 console.log("Fetching prop in object:", db.get("myObj.prop") === "myProp");
 console.log("Deleting prop in object:", db.delete("myObj.prop"));
 console.log("Fetching deleted prop:", db.get("myObj.prop") === null);
-console.log(
-    "Subtracting from Numbers:",
-    typeof db.subtract("myNumber", 50) === "number"
-);
-console.log(
-    "Pushing in array in object:",
-    db.push("myObj.arr", "myItem").arr instanceof Array
-);
 
-// Setting an object in the database:
-console.log(db.set("userInfo", { difficulty: "Easy" }));
-// -> { difficulty: 'Easy' }
+console.log("Pushing in array in object:",db.push("myObj.arr", "myItem").arr instanceof Array);
 
-// Pushing an element to an array (that doesn't exist yet) in an object:
-console.log(db.push("userInfo.items", "Sword"));
-// -> { difficulty: 'Easy', items: ['Sword'] }
+console.log("Clearing db:", db.clear() == 3)
+console.log("Fetching Data After cleared:", db.get("myData") === null);
 
-// Adding to a number (that doesn't exist yet) in an object:
-console.log(db.add("userInfo.balance", 500));
-// -> { difficulty: 'Easy', items: ['Sword'], balance: 500 }
-
-// Repeating previous examples:
-console.log(db.push("userInfo.items", "Watch"));
-// -> { difficulty: 'Easy', items: ['Sword', 'Watch'], balance: 500 }
-console.log(db.add("userInfo.balance", 500));
-// -> { difficulty: 'Easy', items: ['Sword', 'Watch'], balance: 1000 }
-
-// Fetching individual properties
-console.log(db.get("userInfo.balance")); // -> 1000
-console.log(db.get("userInfo.items")); // -> [ 'Sword', 'Watch' ]
-
-// Clearing rows from tables
-db.clear();
-console.log(db.get("data")) // -> null

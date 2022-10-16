@@ -13,10 +13,13 @@ function fn(table) {
     return new table_1.Table(db, table);
 }
 fn.init = function init(file) {
+    if (_init)
+        return fn;
     file = file || "data.sqlite";
     db = new better_sqlite3_1.default(file);
     _init = 1;
     return fn;
 };
+fn.$ = fn;
 module.exports = fn;
 //# sourceMappingURL=index.js.map
