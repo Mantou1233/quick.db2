@@ -1,12 +1,12 @@
 {
     "name": "quick.db2",
-    "version": "7.1.8",
+    "version": "7.2.0",
     "description": "An fork of quick.db 7.1.3+, giving quickly used database services.",
     "main": "index.js",
     "dependencies": {
         "better-sqlite3": "^7.1.1",
         "lodash": "^4.17.20",
-        "quick.db2": "^7.1.8"
+        "quick.db2": "^7.1.9"
     },
     "scripts": {
         "test": "node spec/test.js"

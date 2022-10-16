@@ -11,11 +11,11 @@ support: [https://discord.gg/yvchR6V2PR](https://discord.gg/yvchR6V2PR "https://
 [**Code Sandbox Demo**](https://codesandbox.io/s/quickdb-demo-7ti8z?file=/src/index.js)
 
 ```js
-// .init returns the table wrapper
-const db = require('quick.db2').init("database.sqlite")()
+// .init returns the table wrapper, which is $
+const db = require('quick.db2').init("database.sqlite").$()
 // you can also do this
 require('quick.db2').init('database.sqlite')
-const db = require('quick.db2')();
+const db = require('quick.db2').$();
 
 
 // Setting an object in the database:

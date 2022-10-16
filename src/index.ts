@@ -17,4 +17,6 @@ fn.init = function init(file){
 	return fn;
 }
 
+fn.$ = fn;
+
 module.exports = fn;
