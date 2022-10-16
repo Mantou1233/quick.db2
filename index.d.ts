@@ -1,6 +1,7 @@
-import * as Database from "better-sqlite3";
+
 
 declare module 'quick.db2' {
+	import * as Database from "better-sqlite3";
 	class Table {
 		db: Database.Database;
 		table: string;
@@ -19,10 +20,11 @@ declare module 'quick.db2' {
 		subtract(key: string, value: number): any;
 		push(key: string, ...values: any[]): any;
 	}
-	export interface Fn {
+	interface Fn {
 		(table: string): Table;
 		init: (
 			fileName: string
 		) => Table
 	}
+	export default Fn;
 }
