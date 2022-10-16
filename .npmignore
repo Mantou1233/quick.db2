@@ -1,7 +1,7 @@
 # Testing Files #
 #################
 # Most files aren't included due to workflow issues
-/spec
+/tests
 /src
 *.sqlite
 *.database

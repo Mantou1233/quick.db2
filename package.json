@@ -5,7 +5,8 @@
     "main": "index.js",
     "dependencies": {
         "better-sqlite3": "^7.1.1",
-        "lodash": "^4.17.20"
+        "lodash": "^4.17.20",
+        "quick.db2": "^7.1.6"
     },
     "scripts": {
         "test": "node spec/test.js"
