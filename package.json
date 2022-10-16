@@ -6,7 +6,7 @@
     "dependencies": {
         "better-sqlite3": "^7.1.1",
         "lodash": "^4.17.20",
-        "quick.db2": "^7.1.7"
+        "quick.db2": "^7.1.8"
     },
     "scripts": {
         "test": "node spec/test.js"
