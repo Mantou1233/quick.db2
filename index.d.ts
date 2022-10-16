@@ -20,11 +20,13 @@ declare module "quick.db2" {
 		subtract(key: string, value: number): any;
 		push(key: string, ...values: any[]): any;
 	}
-	interface QuickDB {
-		(table: string): Table;
-		$: (table: string) => Table;
+	interface Fn {
+		(table?: string): Table;
+		$: (table?: string) => Table;
 		init: (
-			fileName: string
+			fileName?: string
 		) => Table
 	}
+	const fn: Fn
+	export default fn;
 }
