@@ -1,24 +1,22 @@
-## Quick.db
+## quick.db2
 
-**Documentation:** [quickdb.js.org](https://quickdb.js.org) <br>
-**Support:** [discord.gg/plexidev](https://discord.gg/plexidev) <br>
-**NPM:** [npmjs.com/quick.db](https://www.npmjs.com/package/quick.db)
+`quick.db2` is a rewrite of `quick.db@7.1.3`, meant to provide an easy way to set up database, different from the newest version of quick.db.
 
-Quick.db is an open-source package meant to provide an easy way for beginners and people of all levels to access & store data in a low to medium volume environment. All data is stored persistently via [better-sqlite3](https://github.com/JoshuaWise/better-sqlite3) and comes way various other quality-of-life features.
-
-- **Persistent Storage** - Data doesn't disappear through restarts
-- **Works out of the box** - No need to set up a database server, all the data is stored locally in the same project
-- **Beginner Friendly** - Originally created for use in tutorials, the documentation is straightforward and jargon-free
-- & more...
+support: [https://discord.gg/yvchR6V2PR](https://discord.gg/yvchR6V2PR "https://discord.gg/yvchR6V2PR")
 
 ## Example
 
-*Below is a demo for **v7.1.3**, which is available on NPM by doing `npm install quick.db` <br>
-The current version of this GitHub repo is v8.0.0*
+*Below is a demo of **v7.1.5**, which is available on NPM by doing `npm i quick.db2`*
 
 [**Code Sandbox Demo**](https://codesandbox.io/s/quickdb-demo-7ti8z?file=/src/index.js)
+
 ```js
-const db = require('quick.db');
+// .init returns the table wrapper
+const db = require('quick.db2').init("database.sqlite")()
+// you can also do this
+require('quick.db2').init('database.sqlite')
+const db = require('quick.db2')();
+
 
 // Setting an object in the database:
 db.set('userInfo', { difficulty: 'Easy' })
@@ -48,15 +46,14 @@ db.get('userInfo.items') // ['Sword', 'Watch']
 *If you're having troubles installing, please follow [this troubleshooting guide](https://github.com/JoshuaWise/better-sqlite3/blob/master/docs/troubleshooting.md).*
 
 **Linux & Windows**
+
 - `npm i quick.db`
 
 ***Note:** Windows users may need to do additional steps [listed here](https://github.com/JoshuaWise/better-sqlite3/blob/master/docs/troubleshooting.md).*
 
 **Mac**
+
 1. **Install:** XCode
 2. **Run:** `npm i -g node-gyp` in terminal
 3. **Run:** `node-gyp --python /path/to/python2.7` (skip this step if you didn't install python 3.x)
 4. **Run:** `npm i quick.db`
-
-## Support
-I work on these projects in my spare time, if you'd like to support me, you can do so via [Patreon! ❤️](https://www.patreon.com/lorencerri)

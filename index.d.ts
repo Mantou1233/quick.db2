@@ -1,26 +1,29 @@
 import * as Database from "better-sqlite3";
 
-declare module 'quick.db' {
-    class Table {
-        db: Database.Database;
-        table: string;
-        constructor(db: Database.Database, table: string);
-        all(): {
-            key: string;
-            value: any;
-        }[];
-        get(key: string): any;
-        set(key: string, value: any): any;
-        delete(key: string): boolean;
-        clear(): number | null;
-        has(key: string, value: number): boolean;
-        operate(key: string, value: number): void;
-        add(key: string, value: number): any;
-        subtract(key: string, value: number): any;
-        push(key: string, ...values: any[]): any;
-    }
+declare module 'quick.db2' {
+	interface Fn {
+		(table: string): Table;
+		init: (
+			fileName: string
+		) => Table
+	}
+}
 
-    (table: string) => Table;
-    
-
+declare class Table {
+	db: Database.Database;
+	table: string;
+	constructor(db: Database.Database, table: string);
+	all(): {
+		key: string;
+		value: any;
+	}[];
+	get(key: string): any;
+	set(key: string, value: any): any;
+	delete(key: string): boolean;
+	clear(): number | null;
+	has(key: string, value: number): boolean;
+	operate(key: string, value: number): void;
+	add(key: string, value: number): any;
+	subtract(key: string, value: number): any;
+	push(key: string, ...values: any[]): any;
 }

@@ -10,6 +10,7 @@ function fn(table){
 }
 
 fn.init = function init(file){
+	if(_init) return fn;
 	file = file || "data.sqlite";
 	db = new Database(file);
 	_init = 1;
