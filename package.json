@@ -1,7 +1,7 @@
 {
-    "name": "quick.db",
-    "version": "8.0.0",
-    "description": "An easy, non-locking, persistent better-sqlite3 wrapper designed to be easy to setup & utilize",
+    "name": "quick.db2",
+    "version": "7.1.5",
+    "description": "An fork of quick.db 7.1.3+, giving quickly used database services.",
     "main": "index.js",
     "dependencies": {
         "better-sqlite3": "^7.1.1",
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/TrueXPixels/quick.db.git"
+        "url": "git+https://github.com/Mantou1233/quick.db2.git"
     },
     "keywords": [
         "database",
@@ -25,11 +25,9 @@
         "db"
     ],
     "author": "Mantou1233",
-    "license": "MIT",
     "bugs": {
-        "url": "https://github.com/TrueXPixels/quick.db/issues"
+        "url": "https://github.com/Mantou1233/quick.db2/issues"
     },
-    "homepage": "https://quickdb.js.org",
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.2",
         "@types/lodash": "^4.14.186"
