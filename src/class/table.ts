@@ -22,7 +22,9 @@ export class Table<T extends Database.Database = Database.Database> {
         for (const row of data.iterate()) {
             try {
                 let value = JSON.parse(row.json);
-                values[row.ID] = value;
+                values.push({
+                    key: row.ID, value
+                });
             } catch (e) {}
         }
         return values;

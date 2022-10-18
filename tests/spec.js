@@ -6,6 +6,7 @@ let db = ins();
 console.log("Setting Data:", db.set("myNumber", 100) === 100);
 console.log("Fetching Data:", db.get("myNumber") === 100);
 
+console.log("Subtracting Numbers:", db.all());
 
 console.log("Adding Numbers:", db.add("myNumber", 100) === 200);
 console.log("Subtracting Numbers:", db.subtract("myNumber", 50) === 150);
