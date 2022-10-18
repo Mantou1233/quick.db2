@@ -25,7 +25,7 @@ declare module "quick.db2" {
 		$: (table?: string) => Table;
 		init: (
 			fileName?: string
-		) => Table
+		) => Fn
 	}
 	const fn: Fn
 	export default fn;
